@@ -9,7 +9,7 @@ router.get('/countries/:country', (req, res, next) => {
     country.name.common.toLowerCase().includes(req.params.country.toLowerCase()) ||  country.name.official.includes(req.params.country.toLowerCase())
 
   )
-
+  res.setHeader('Content-Type', 'application/json');
   res.send(countriesFiltered);
 });
 
