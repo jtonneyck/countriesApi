@@ -10,7 +10,7 @@ router.get('/countries/:country', (req, res, next) => {
 
   )
 
-  res.json(countriesFiltered);
+  res.send(countriesFiltered);
 });
 
 module.exports = router;
