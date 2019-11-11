@@ -7,5 +7,4 @@ This app depends on a .env file with one variable
 /.env
 ```
 PORT=portnumberofchoice
-
 ```
