@@ -2,14 +2,16 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+var cors = require("cors");
+require('dotenv').config();
 
 var app = express();
-
 app.use(logger('dev'));
+app.use(cors({
+  origin: JSON.parse(process.env.client_origins)
+}));
 
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/countries', require("./routes/countries"));
 
 // catch 404 and forward to error handler
